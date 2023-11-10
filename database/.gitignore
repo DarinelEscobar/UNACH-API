@@ -1,1 +1,10 @@
 *.sqlite*
+# Ignore directories
+.vscode
+/node_modules
+
+# Ignore files
+.env
+.DS_Store
+Thumbs.db
+.idea
