@@ -13,7 +13,7 @@ class CreateStudentUseCase
     {
         $validator = Validator::make($data, [
             'name' => 'required|string|max:100',
-            'password' => 'required|string|max:100',
+            'password' => 'required|string|max:1000',
         ]);
 
         if ($validator->fails()) {
