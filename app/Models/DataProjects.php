@@ -10,7 +10,7 @@ class DataProjects extends Model
     use HasFactory;
 
     protected $table = 'data_projects';
-
+    protected $primaryKey = 'id_projects';
     protected $fillable = [
         'id_projects',
         'unach_id',

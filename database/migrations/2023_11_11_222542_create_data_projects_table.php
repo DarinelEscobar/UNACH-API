@@ -48,9 +48,9 @@ return new class extends Migration
             $table->string('rt_perspective', 100)->nullable();
             $table->string('rt_scope', 100)->nullable();
             $table->string('rt_specify', 200)->nullable();
-            $table->text('work_group')->nullable();//! ARRAY
-            $table->text('research_training_students')->nullable();//! ARRAY
-            $table->text('participating_entities')->nullable();//! ARRAY
+            $table->string('work_group')->nullable();//! ARRAY
+            $table->string('research_training_students')->nullable();//! ARRAY
+            $table->string('participating_entities')->nullable();//! ARRAY
 
             $table->timestamps();
         });
