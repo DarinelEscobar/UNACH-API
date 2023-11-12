@@ -11,10 +11,10 @@ use Illuminate\Http\Request;
 
 class DataProjectsController extends Controller
 {
-    public function getById(Request $request, $id)
+    public function getById(Request $request, $id_projects)
     {
         $useCase = new GetByIdUseCase();
-        $result = $useCase->execute($id);
+        $result = $useCase->execute($id_projects);
 
         return response()->json($result['data'] ?? [], $result['status']);
     }
