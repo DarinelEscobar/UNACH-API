@@ -12,12 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('projects', function (Blueprint $table) {
-            $table->string('id')->primary();
-            $table->string('unach_id');
-            $table->string('title_project', 100);
-            $table->date('start_date');
-            $table->date('end_date');
-            $table->string('student_name');
+            $table->id();
+            $table->string('unach_id')->nullable();
+            $table->unsignedInteger('status')->nullable()->default(0)->digits(4);
+            $table->string('title_project', 100)->nullable();
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
+            $table->string('student_name')->nullable();
+            $table->string('link_drive')->nullable();
             $table->timestamps();
         });
     }

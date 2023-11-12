@@ -13,33 +13,33 @@ return new class extends Migration
     {
         Schema::create('project_protocol', function (Blueprint $table) {
             $table->foreignId('id_projects');//! From Table Porjets
-            $table->text('executive_summary');
-            $table->text('introduction');
-            $table->text('main_contribution');
-            $table->text('articulation_with_substantive_functions');
-            $table->text('theoretical_conceptual_framework');
-            $table->text('justification');
-            $table->text('research_question');
-            $table->text('general_objective');
-            $table->text('specific_objectives');
-            $table->text('hypothesis_or_assumptions');
-            $table->text('methodological_design');
-            $table->text('participants_sample');
-            $table->text('techniques_instruments');
-            $table->text('materials');
-            $table->text('data_collection_procedure');
-            $table->text('procedure_for_analysis');
-            $table->text('risks_or_threats');
-            $table->text('ways_to_face_risks_and_threats');
-            $table->text('informed_consent');
-            $table->text('ethical_committees_bioethics_biosafety');
-            $table->text('infrastructure');
-            $table->text('resources');
-            $table->text('ethical_considerations');
-            $table->text('financial_breakdown');//! ARRAY
-            $table->text('stages_and_activities');//! ARRAY
-            $table->text('committed_research_products');//! ARRAY
-            $table->text('references');
+            $table->text('executive_summary')->nullable();
+            $table->text('introduction')->nullable();
+            $table->text('main_contribution')->nullable();
+            $table->text('articulation_with_substantive_functions')->nullable();
+            $table->text('theoretical_conceptual_framework')->nullable();
+            $table->text('justification')->nullable();
+            $table->text('research_question')->nullable();
+            $table->text('general_objective')->nullable();
+            $table->text('specific_objectives')->nullable();
+            $table->text('hypothesis_or_assumptions')->nullable();
+            $table->text('methodological_design')->nullable();
+            $table->text('participants_sample')->nullable();
+            $table->text('techniques_instruments')->nullable();
+            $table->text('materials')->nullable();
+            $table->text('data_collection_procedure')->nullable();
+            $table->text('procedure_for_analysis')->nullable();
+            $table->text('risks_or_threats')->nullable();
+            $table->text('ways_to_face_risks_and_threats')->nullable();
+            $table->text('informed_consent')->nullable();
+            $table->text('ethical_committees_bioethics_biosafety')->nullable();
+            $table->text('infrastructure')->nullable();
+            $table->text('resources')->nullable();
+            $table->text('ethical_considerations')->nullable();
+            $table->text('financial_breakdown')->nullable();//! ARRAY
+            $table->text('stages_and_activities')->nullable();//! ARRAY
+            $table->text('committed_research_products')->nullable();//! ARRAY
+            $table->text('references')->nullable();
             $table->timestamps();
 
         });

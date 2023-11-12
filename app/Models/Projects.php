@@ -13,9 +13,11 @@ class Projects extends Model
 
     protected $fillable = [
         'unach_id',
+        'status',
         'title_project',
         'start_date',
         'end_date',
         'student_name',
+        'link_drive',
     ];
 }

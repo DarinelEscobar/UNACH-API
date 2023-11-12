@@ -3,9 +3,11 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Test\StudentController;
+use App\Http\Controllers\Projects\ProjectsController;
 
-// Include Student routes
+// Include Student and projects routes
 include base_path('routes/route/Student.php');
+include base_path('routes/route/Project.php');
 
 // Rest of your routes...
 
