@@ -42,12 +42,10 @@ class PostProjectProtocolUseCase
             'references' => 'string',
         ]);
 
-        // Check if validation fails
         if ($validator->fails()) {
             return ['status' => 422, 'error' => $validator->messages()];
         }
 
-        // Create the ProjectProtocol instance
         $dataProject = ProjectProtocol::create($data);
 
         return $dataProject
