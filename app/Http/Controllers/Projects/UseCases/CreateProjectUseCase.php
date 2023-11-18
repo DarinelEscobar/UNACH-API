@@ -12,10 +12,10 @@ class CreateProjectUseCase
     {
         $validator = Validator::make($data, [
             'unach_id' => 'required|string',
-            'title_project' => 'required|string|max:100',
-            'start_date' => 'required|date',
-            'end_date' => 'required|date',
-            'student_name' => 'required|string|max:100',
+            'title_project' => 'string|max:250',
+            'start_date' => 'date',
+            'end_date' => 'date',
+            'student_name' => 'string|max:100',
         ]);
 
         if ($validator->fails()) {
@@ -23,15 +23,20 @@ class CreateProjectUseCase
         }
 
         try {
+            // Create the project
             $project = Projects::create([
                 'unach_id' => $data['unach_id'],
                 'status' => $data['status'],
-                'title_project' => $data['title_project'],
-                'start_date' => $data['start_date'],
-                'end_date' => $data['end_date'],
-                'student_name' => $data['student_name'],
-                'link_drive' => $data['link_drive'],
+                'title_project' => isset($data['title_project']) ? $data['title_project'] : null,
+                'start_date' => isset($data['start_date']) ? $data['start_date'] : null,
+                'end_date' => isset($data['end_date']) ? $data['end_date'] : null,
+                'student_name' => isset($data['student_name']) ? $data['student_name'] : null,
+                'link_drive' => isset($data['link_drive']) ? $data['link_drive'] : null,
             ]);
+            
+
+            // Retrieve the ID of the created project
+            // $projectId = $project->id;
 
             return $project
                 ? ['status' => 200, 'message' => 'Project created successfully', 'data' => $project]

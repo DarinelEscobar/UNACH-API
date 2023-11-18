@@ -7,7 +7,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Projects\UseCases\CreateProjectUseCase;
 use App\Http\Controllers\Projects\UseCases\GetByStatusUseCase;  
 use App\Http\Controllers\Projects\UseCases\GetByunach_idUseCase; 
-use App\Http\Controllers\Projects\UseCases\PutStatusByIDUseCase;  
+use App\Http\Controllers\Projects\UseCases\PutStatusByIDUseCase; 
+use App\Http\Controllers\Projects\UseCases\PutDataByIDUseCase; 
+ 
 
 use Illuminate\Http\Request;
 
@@ -29,9 +31,8 @@ class ProjectsController extends Controller
 
         return response()->json($result['data'] ?? [], $result['status']);
     }
-    public function getByunach_id(Request $request)
+    public function getByunach_id($unach_id)
     {
-        $unach_id = $request->input('unach_id');
         $useCase = new GetByunach_idUseCase();
         $result = $useCase->execute($unach_id);
 
@@ -47,5 +48,16 @@ class ProjectsController extends Controller
 
         return response()->json($result, $result['status']);
     }
+    public function modifyDataByID(Request $request, $id)
+{
+    // Get the data from the request body
+    $requestData = $request->json()->all();
+
+    $useCase = new PutDataByIDUseCase();
+    $result = $useCase->execute($id, $requestData);
+
+    return response()->json($result, $result['status']);
+}
+
 
 }

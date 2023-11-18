@@ -10,14 +10,12 @@ class DataProjects extends Model
     use HasFactory;
 
     protected $table = 'data_projects';
-    protected $primaryKey = 'id_projects';
+    protected $primaryKey = 'id';
     protected $fillable = [
+        'id',
         'id_projects',
         'unach_id',
-        'proposal_elaboration_date',
         'location_execution',
-        'project_execution_period_start',
-        'project_execution_period_end',
         'weekly_hours',
         'full_name_technical_responsible',
         'affiliation_center',

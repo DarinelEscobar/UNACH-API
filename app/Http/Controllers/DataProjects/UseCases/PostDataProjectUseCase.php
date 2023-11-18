@@ -12,12 +12,12 @@ class PostDataProjectUseCase
     {
        
         $validator = Validator::make($data, [
-            'id_projects' => 'required',
+            'id_projects' => '',
             'unach_id' => 'string|max:255',
-            'proposal_elaboration_date' => 'date',
+            // 'proposal_elaboration_date' => 'date',
             'location_execution' => 'string|max:50',
-            'project_execution_period_start' => 'date',
-            'project_execution_period_end' => 'date|after_or_equal:project_execution_period_start',
+            // 'project_execution_period_start' => 'date',
+            // 'project_execution_period_end' => 'date|after_or_equal:project_execution_period_start',
             'weekly_hours' => 'integer',
             'full_name_technical_responsible' => 'string|max:255',
             'affiliation_center' => 'string|max:100',

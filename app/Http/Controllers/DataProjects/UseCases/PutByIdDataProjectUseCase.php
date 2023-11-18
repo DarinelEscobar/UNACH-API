@@ -19,7 +19,7 @@ class PutByIdDataProjectUseCase
             return ['status' => 200, 'message' => 'Proyecto de datos modificado exitosamente', 'data' => $dataProject];
         } else {
             $message = "No se encontró el proyecto con el id_projects '{$id_projects}'";
-            return ['status' => 404, 'error' => $message];
+            return ['status' => 400, 'error' => $message, 'data' => $dataProject];
         }
     }
 }

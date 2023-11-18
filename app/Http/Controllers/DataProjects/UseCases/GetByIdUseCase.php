@@ -18,7 +18,7 @@ class GetByIdUseCase
         if ($DataProjects->count() > 0) {
             return ['status' => 200, 'data' => ['DataProjects' => $DataProjects]];
         } else {
-            $message = "No se encontraron proyectos con el estado '{$id_projects}'";
+            $message = "No se encontraron datos de proyecto '{$id_projects}'";
             return ['status' => 200, 'data' => ['error' => $message]];
         }
     }
