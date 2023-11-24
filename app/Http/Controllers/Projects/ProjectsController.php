@@ -9,6 +9,8 @@ use App\Http\Controllers\Projects\UseCases\GetByStatusUseCase;
 use App\Http\Controllers\Projects\UseCases\GetByunach_idUseCase; 
 use App\Http\Controllers\Projects\UseCases\PutStatusByIDUseCase; 
 use App\Http\Controllers\Projects\UseCases\PutDataByIDUseCase; 
+use App\Http\Controllers\Projects\UseCases\GetProjetByIdProjectUseCase; 
+use App\Http\Controllers\Projects\UseCases\GetPDFUseCase; 
  
 
 use Illuminate\Http\Request;
@@ -23,9 +25,8 @@ class ProjectsController extends Controller
         return response()->json($result, $result['status']);
     }
 
-    public function getByStatus(Request $request)
+    public function getByStatus($status)
     {
-        $status = $request->input('status');
         $useCase = new GetByStatusUseCase();
         $result = $useCase->execute($status);
 
@@ -57,6 +58,20 @@ class ProjectsController extends Controller
     $result = $useCase->execute($id, $requestData);
 
     return response()->json($result, $result['status']);
+}
+public function getByid_projects($id)
+{
+    $useCase = new GetProjetByIdProjectUseCase();
+    $result = $useCase->execute($id);
+
+    return response()->json($result['data'] ?? [], $result['status']);
+}
+public function getPDF($id)
+{
+    $useCase = new GetPDFUseCase();
+    $result = $useCase->execute($id);
+
+    return response()->json($result['data'] ?? [], $result['status']);
 }
 
 

@@ -55,11 +55,11 @@ return new class extends Migration
             $table->string('rt_scope', 100)->nullable();
             $table->string('rt_specify', 200)->nullable();
             // 1.8
-            $table->string('work_group')->nullable();//! ARRAY
+            $table->string('work_group', 500)->nullable();//! ARRAY
             // 1-9
-            $table->string('research_training_students')->nullable();//! ARRAY
+            $table->string('research_training_students', 500)->nullable();//! ARRAY
             // 1.10
-            $table->string('participating_entities')->nullable();//! ARRAY
+            $table->string('participating_entities', 500)->nullable();//! ARRAY
 
             $table->timestamps();
         });

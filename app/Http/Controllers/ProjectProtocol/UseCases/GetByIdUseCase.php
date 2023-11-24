@@ -19,7 +19,7 @@ class GetByIdUseCase
             return ['status' => 200, 'data' => ['ProjectProtocol' => $ProjectProtocol]];
         } else {
             $message = "No se encontraron proyectos con el estado '{$id_projects}'";
-            return ['status' => 200, 'data' => ['error' => $message]];
+            return ['status' => 204, 'data' => ['error' => $message]];
         }
     }
 }

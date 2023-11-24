@@ -10,9 +10,7 @@ class GetByStatusUseCase
     public function execute(string $status = null)
     {
         if ($status) {
-            $projects = Projects::where('status', $status)->get();
-        } else {
-            $projects = Projects::all();
+            $projects = Projects::where('status', $status)->orderBy('updated_at', 'desc')->get();
         }
 
         if ($projects->count() > 0) {
