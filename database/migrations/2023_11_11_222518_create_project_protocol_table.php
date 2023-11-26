@@ -23,6 +23,7 @@ return new class extends Migration
             $table->text('general_objective')->nullable();
             $table->text('specific_objectives')->nullable();
             $table->text('hypothesis_or_assumptions')->nullable();
+
             $table->text('methodological_design')->nullable();
             $table->text('participants_sample')->nullable();
             $table->text('techniques_instruments')->nullable();
@@ -33,12 +34,17 @@ return new class extends Migration
             $table->text('ways_to_face_risks_and_threats')->nullable();
             $table->text('informed_consent')->nullable();
             $table->text('ethical_committees_bioethics_biosafety')->nullable();
+
             $table->text('infrastructure')->nullable();
             $table->text('resources')->nullable();
+
             $table->text('ethical_considerations')->nullable();
+
             $table->text('financial_breakdown')->nullable();//! ARRAY
             $table->text('stages_and_activities')->nullable();//! ARRAY
-            $table->text('committed_research_products')->nullable();//! ARRAY
+            // *not existing values into inputs
+            $table->text('committed_research_products')->nullable();//! ARRAY //?Where
+
             $table->text('references')->nullable();
             $table->timestamps();
 

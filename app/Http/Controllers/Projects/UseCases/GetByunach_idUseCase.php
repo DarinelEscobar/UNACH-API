@@ -7,12 +7,10 @@ use App\Models\Projects;
 
 class GetByunach_idUseCase
 {
-    public function execute(string $unach_id = null)
+    public function execute(string $unach_id )
 {
     if ($unach_id) {
         $projects = Projects::where('unach_id', $unach_id)->orderBy('updated_at', 'desc')->get();
-    } else {
-        $projects = Projects::orderBy('updated_at', 'desc')->get();
     }
 
     if ($projects->count() > 0) {
@@ -21,6 +19,8 @@ class GetByunach_idUseCase
         $message = "No se encontraron proyectos con el estado '{$unach_id}'";
         return ['status' => 404, 'data' => ['error' => $message]];
     }
+
+    
 }
 
 }

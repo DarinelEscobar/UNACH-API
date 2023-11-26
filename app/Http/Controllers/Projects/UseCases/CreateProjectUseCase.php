@@ -12,6 +12,7 @@ class CreateProjectUseCase
     {
         $validator = Validator::make($data, [
             'unach_id' => 'required|string',
+            'comments'=> 'string|max:300',
             'title_project' => 'string|max:250',
             'start_date' => 'date',
             'end_date' => 'date',
@@ -27,6 +28,7 @@ class CreateProjectUseCase
             $project = Projects::create([
                 'unach_id' => $data['unach_id'],
                 'status' => $data['status'],
+                'comments' => isset($data['comments']) ? $data['comments'] : null,
                 'title_project' => isset($data['title_project']) ? $data['title_project'] : null,
                 'start_date' => isset($data['start_date']) ? $data['start_date'] : null,
                 'end_date' => isset($data['end_date']) ? $data['end_date'] : null,

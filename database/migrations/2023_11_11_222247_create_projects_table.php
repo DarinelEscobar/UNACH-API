@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('unach_id')->nullable();
             $table->unsignedInteger('status')->nullable()->default(0)->digits(4);
+            $table->string('comments')->nullable();
             $table->string('title_project', 250)->nullable();
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
