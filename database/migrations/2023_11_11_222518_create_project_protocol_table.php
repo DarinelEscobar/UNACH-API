@@ -35,15 +35,22 @@ return new class extends Migration
             $table->text('informed_consent')->nullable();
             $table->text('ethical_committees_bioethics_biosafety')->nullable();
 
+            // <>'stages_and_activities'-> ARRAY
+            $table->date('S1StarDate')->nullable();
+            $table->date('S1SEndDate')->nullable();
+            $table->date('S2StarDate')->nullable();
+            $table->date('S2SEndDate')->nullable();
+            $table->text('SA_1')->nullable();//! ARRAY
+            $table->text('SA_2')->nullable();//! ARRAY
+
             $table->text('infrastructure')->nullable();
             $table->text('resources')->nullable();
 
             $table->text('ethical_considerations')->nullable();
 
-            $table->text('financial_breakdown')->nullable();//! ARRAY
-            $table->text('stages_and_activities')->nullable();//! ARRAY
+            $table->json('financial_breakdown')->nullable();//! ARRAY
             // *not existing values into inputs
-            $table->text('committed_research_products')->nullable();//! ARRAY //?Where
+            $table->json('committed_research_products')->nullable();//! ARRAY //?Where
 
             $table->text('references')->nullable();
             $table->timestamps();

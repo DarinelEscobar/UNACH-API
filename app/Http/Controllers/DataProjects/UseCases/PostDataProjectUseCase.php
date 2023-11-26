@@ -48,9 +48,9 @@ class PostDataProjectUseCase
             'rt_perspective' => 'string|max:100',
             'rt_scope' => 'string|max:100',
             'rt_specify' => 'string|max:200',
-            'work_group' => 'string',
-            'research_training_students' => 'string',
-            'participating_entities' => 'string',
+            'work_group' => 'array',
+            'research_training_students' => 'array',
+            'participating_entities' => 'array',
         ]);
 
         // Check if validation fails

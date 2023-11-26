@@ -35,18 +35,28 @@ class ProjectProtocol extends Model
         'ways_to_face_risks_and_threats',
         'informed_consent',
         'ethical_committees_bioethics_biosafety',
+
+        'S1StarDate',
+        'S1SEndDate',
+        'S2StarDate',
+        'S2SEndDate',
+        'SA_1',
+        'SA_2',
+
         'infrastructure',
         'resources',
         'ethical_considerations',
         'financial_breakdown',
-        'stages_and_activities',
+        // 'stages_and_activities',
         'committed_research_products',
         'references',
     ];
 
     protected $casts = [
         'financial_breakdown' => 'array',
-        'stages_and_activities' => 'array',
+        'SA_1'=>'array',
+        'SA_2'=>'array',
+        // 'stages_and_activities' => 'array',
         'committed_research_products' => 'array',
     ];
 

@@ -33,12 +33,20 @@ class PostProjectProtocolUseCase
             'ways_to_face_risks_and_threats' => 'string',
             'informed_consent' => 'string',
             'ethical_committees_bioethics_biosafety' => 'string',
+
+            'S1StarDate' =>'date',
+            'S1SEndDate' =>'date',
+            'S2StarDate' =>'date',
+            'S2SEndDate' =>'date',
+            'SA_1' =>'array',
+            'SA_2' =>'array',
+
             'infrastructure' => 'string',
             'resources' => 'string',
             'ethical_considerations' => 'string',
-            'financial_breakdown' => 'string',
-            'stages_and_activities' => 'string',
-            'committed_research_products' => 'string',
+            'financial_breakdown' => 'array',
+            // 'stages_and_activities' => 'string',
+            'committed_research_products' => 'array',
             'references' => 'string',
         ]);
 
@@ -46,10 +54,10 @@ class PostProjectProtocolUseCase
             return ['status' => 422, 'error' => $validator->messages()];
         }
 
-        $dataProject = ProjectProtocol::create($data);
+        $dataProject    = ProjectProtocol::create($data);
 
         return $dataProject
             ? ['status' => 200, 'message' => 'Project Protocol creado exitosamente', 'data' => $dataProject]
-            : ['status' => 500, 'error' => 'Algo salió mal al crear el ProjectProtocol'];
+                        : ['status' => 500, 'error' => 'Algo salió mal al crear el ProjectProtocol'];
     }
 }

@@ -56,6 +56,7 @@ class DataProjects extends Model
         'research_training_students' => 'array',
         'participating_entities' => 'array',
     ];
+    
 
     protected $dates = [
         'created_at',
