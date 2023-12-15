@@ -54,10 +54,18 @@ class PostProjectProtocolUseCase
             return ['status' => 422, 'error' => $validator->messages()];
         }
 
-        $dataProject    = ProjectProtocol::create($data);
+        // Verificar si ya existe un registro con el mismo id_project
+        $existingProjectProtocol = ProjectProtocol::where('id_projects', $data['id_projects'])->first();
+
+        if ($existingProjectProtocol) {
+            return ['status' => 409, 'error' => 'Ya existe un Project Protocol para este id_projects'];
+        }
+
+        // Crear el nuevo ProjectProtocol
+        $dataProject = ProjectProtocol::create($data);
 
         return $dataProject
             ? ['status' => 200, 'message' => 'Project Protocol creado exitosamente', 'data' => $dataProject]
-                        : ['status' => 500, 'error' => 'Algo salió mal al crear el ProjectProtocol'];
+            : ['status' => 500, 'error' => 'Algo salió mal al crear el Project Protocol'];
     }
 }

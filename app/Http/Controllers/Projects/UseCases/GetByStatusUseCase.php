@@ -16,8 +16,8 @@ class GetByStatusUseCase
         if ($projects->count() > 0) {
             return ['status' => 200, 'data' => ['projects' => $projects]];
         } else {
-            $message = "No se encontraron proyectos con el estado '{$status}'";
-            return ['status' => 200, 'data' => ['error' => $message]];
+            $message = null;
+            return ['status' => 200, 'data' => ['projects' => $message]];
         }
     }
 }

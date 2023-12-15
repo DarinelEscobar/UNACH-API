@@ -25,6 +25,7 @@ class ProjectProtocol extends Model
         'general_objective',
         'specific_objectives',
         'hypothesis_or_assumptions',
+        
         'methodological_design',
         'participants_sample',
         'techniques_instruments',

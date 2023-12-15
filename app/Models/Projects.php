@@ -13,6 +13,7 @@ class Projects extends Model
 
     protected $fillable = [
         'unach_id',
+        'comments',
         'status',
         'title_project',
         'start_date',

@@ -7,7 +7,7 @@ use App\Models\Projects;
 
 class PutStatusByIDUseCase
 {
-    public function execute(string $id, string $status)
+    public function execute(string $id, string $status, ?string $comments)
     {
         try {
             $project = Projects::find($id);
@@ -16,6 +16,13 @@ class PutStatusByIDUseCase
                 return ['status' => 404, 'error' => 'Project not found'];
             }
 
+            $comments = $comments ?? '';
+
+            if ($comments !== "") {
+                $project->comments = "";
+            }
+
+            // Update project status
             $project->status = $status;
             $project->save();
 

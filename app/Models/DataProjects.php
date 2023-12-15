@@ -24,10 +24,12 @@ class DataProjects extends Model
         'cellphone',
         'degree',
         'employment_status',
+
         'knowledge_area',
         'discipline',
         'specify',
         'specific_topic',
+
         'academic_body_name',
         'ca_status',
         'collaboration_networks',
@@ -35,6 +37,7 @@ class DataProjects extends Model
         'collegiate_research_group_name',
         'formalization_instance',
         'research_line_to_develop',
+
         'funding_type',
         'institution_source',
         'call_program',
@@ -43,10 +46,13 @@ class DataProjects extends Model
         'evaluating_instance',
         'allocation_resources_agreement',
         'total_amount_mexican_pesos',
+
         'rt_perspective',
         'rt_scope',
         'rt_specify',
+
         'work_group',
+        
         'research_training_students',
         'participating_entities',
     ];

@@ -43,9 +43,10 @@ class ProjectsController extends Controller
     {
         $status = $request->input('status');
         $id = $request->input('id');
+        $comments = $request->input('comments');
 
         $useCase = new PutStatusByIDUseCase();
-        $result = $useCase->execute($id, $status);
+        $result = $useCase->execute($id, $status, $comments);
 
         return response()->json($result, $result['status']);
     }
