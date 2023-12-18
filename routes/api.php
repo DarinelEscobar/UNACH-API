@@ -6,12 +6,15 @@ use App\Http\Controllers\Test\StudentController;
 use App\Http\Controllers\Projects\ProjectsController;
 use App\Http\Controllers\DataProjects\DataProjectsController;
 use App\Http\Controllers\DataProjects\ProjectProtocolController;
+use App\Http\Controllers\DataProjects\ProjectAssignmentsController;
+
 
 // Include routes
 include base_path('routes/route/Student.php');
 include base_path('routes/route/Project.php');
 include base_path('routes/route/DataProject.php'); 
 include base_path('routes/route/ProjectProtocol.php'); 
+include base_path('routes/route/ProjectAssignments.php'); 
 
 
 // Rest of your routes...

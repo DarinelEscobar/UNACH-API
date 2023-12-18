@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('project_assignments', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('project_id');
+            $table->unsignedBigInteger('professor_id');
             $table->timestamps();
+
+            // Definición de las claves foráneas
+            $table->foreign('project_id')->references('id')->on('projects');
+            $table->foreign('professor_id')->references('id')->on('professors');
         });
     }
 
