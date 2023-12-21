@@ -28,4 +28,9 @@ class ProjectAssignments extends Model
     {
         return $this->belongsTo(Professors::class, 'professor_id');
     }
+    
+    public function grades()
+    {
+        return $this->hasMany(Grade::class, 'project_assignment_id');
+    }
 }

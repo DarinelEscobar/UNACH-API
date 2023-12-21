@@ -10,7 +10,10 @@ Route::prefix('projects')->group(function () {
     Route::post('/', [ProjectsController::class, 'create']);
     Route::put('data/{id}', [ProjectsController::class, 'modifyDataByID']);
     Route::get('idprojects/{id}', [ProjectsController::class, 'getByid_projects']);
-    Route::get('PDF/{id}', [ProjectsController::class, 'getPDF']);
+    Route::get('PDF/{id}', [ProjectsController::class, 'getPDF']); 
+    Route::get('ID/Status', [ProjectsController::class, 'getByStatus1140']);
+
+    
     
 });
 

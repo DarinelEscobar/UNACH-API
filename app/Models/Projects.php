@@ -25,4 +25,9 @@ class Projects extends Model
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
+    
+    public function grades()
+    {
+        return $this->hasMany(Grade::class, 'project_id');
+    }
 }

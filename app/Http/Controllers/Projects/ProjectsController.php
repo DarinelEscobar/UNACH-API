@@ -11,6 +11,7 @@ use App\Http\Controllers\Projects\UseCases\PutStatusByIDUseCase;
 use App\Http\Controllers\Projects\UseCases\PutDataByIDUseCase; 
 use App\Http\Controllers\Projects\UseCases\GetProjetByIdProjectUseCase; 
 use App\Http\Controllers\Projects\UseCases\GetPDFUseCase; 
+use App\Http\Controllers\Projects\UseCases\GetByStatus1140UseCase; 
  
 
 use Illuminate\Http\Request;
@@ -75,5 +76,12 @@ public function getPDF($id)
     return response()->json($result['data'] ?? [], $result['status']);
 }
 
+public function getByStatus1140()
+    {
+        $useCase = new GetByStatus1140UseCase();
+        $result = $useCase->execute();
+
+        return response()->json($result['data'] ?? [], $result['status']);
+    }
 
 }
