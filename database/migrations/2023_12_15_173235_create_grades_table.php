@@ -14,25 +14,25 @@ return new class extends Migration
         Schema::create('grades', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('project_assignment_id');
-            $table->unsignedBigInteger('project_id')->nullable();
-            $table->integer('grade');
+            $table->unsignedBigInteger('project_id');
+            $table->integer('grade')->nullable();
             $table->text('comments')->nullable();
 
-            $table->enum('format_criteria', ['Adecuado', 'Inadecuado'])->default('Adecuado');
-            $table->enum('plagiarism', ['Adecuado', 'Inadecuado'])->default('Adecuado');
-            $table->enum('language_evaluation', ['Adecuado', 'Inadecuado'])->default('Adecuado');
-            $table->enum('citation_evaluation', ['Adecuado', 'Inadecuado'])->default('Adecuado');
+            $table->enum('format_criteria', ['Adecuado', 'Inadecuado', 'Seleccione'])->nullable();
+            $table->enum('plagiarism', ['Adecuado', 'Inadecuado', 'Seleccione'])->nullable();
+            $table->enum('language_evaluation', ['Adecuado', 'Inadecuado', 'Seleccione'])->nullable();
+            $table->enum('citation_evaluation', ['Adecuado', 'Inadecuado', 'Seleccione'])->nullable();
             // ... otros criterios de forma
 
-            $table->enum('concise_project_summary', ['Adecuado', 'Inadecuado'])->default('Adecuado');
-            $table->enum('clear_objectives', ['Adecuado', 'Inadecuado'])->default('Adecuado');
-            $table->enum('academic_language', ['Adecuado', 'Inadecuado'])->default('Adecuado');
-            $table->enum('precise_conclusion', ['Adecuado', 'Inadecuado'])->default('Adecuado');
-            $table->enum('unforeseen_situations', ['Adecuado', 'Inadecuado'])->default('Adecuado');
-            $table->enum('evident_contribution', ['Adecuado', 'Inadecuado'])->default('Adecuado');
-            $table->enum('academic_production', ['Adecuado', 'Inadecuado'])->default('Adecuado');
-            $table->enum('collaborative_work', ['Adecuado', 'Inadecuado'])->default('Adecuado');
-            $table->enum('well_written_report', ['Adecuado', 'Inadecuado'])->default('Adecuado');
+            $table->enum('concise_project_summary', ['Adecuado', 'Inadecuado', 'Seleccione'])->nullable();
+            $table->enum('clear_objectives', ['Adecuado', 'Inadecuado', 'Seleccione'])->nullable();
+            $table->enum('academic_language', ['Adecuado', 'Inadecuado', 'Seleccione'])->nullable();
+            $table->enum('precise_conclusion', ['Adecuado', 'Inadecuado', 'Seleccione'])->nullable();
+            $table->enum('unforeseen_situations', ['Adecuado', 'Inadecuado', 'Seleccione'])->nullable();
+            $table->enum('evident_contribution', ['Adecuado', 'Inadecuado', 'Seleccione'])->nullable();
+            $table->enum('academic_production', ['Adecuado', 'Inadecuado', 'Seleccione'])->nullable();
+            $table->enum('collaborative_work', ['Adecuado', 'Inadecuado', 'Seleccione'])->nullable();
+            $table->enum('well_written_report', ['Adecuado', 'Inadecuado', 'Seleccione'])->nullable();
             
             $table->timestamps();
 
