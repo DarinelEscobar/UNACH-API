@@ -19,7 +19,6 @@ return new class extends Migration
 
             // Definición de las claves foráneas
             $table->foreign('project_id')->references('id')->on('projects');
-            $table->foreign('professor_id')->references('id')->on('professors');
         });
     }
 

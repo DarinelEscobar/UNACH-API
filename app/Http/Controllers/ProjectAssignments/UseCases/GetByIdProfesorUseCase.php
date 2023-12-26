@@ -4,13 +4,19 @@
 namespace App\Http\Controllers\ProjectAssignments\UseCases;
 
 use App\Models\ProjectAssignments;
+use Illuminate\Support\Facades\Log; // BCM: Importa la clase Log
 
 class GetByIdProfesorUseCase
 {
     public function execute($professor_id)
     {
         try {
-            $assignedProjects = ProjectAssignments::where('professor_id', $professor_id)->with('project')->get();
+            $assignedProjects = ProjectAssignments::where('professor_id', $professor_id)
+                ->whereDoesntHave('grades', function ($query) use ($professor_id) {
+                    $query->where('professor_id', '=', $professor_id);
+                })
+                ->with('project')
+                ->get();
 
             if ($assignedProjects->count() > 0) {
                 $formattedProjects = $this->formatProjects($assignedProjects);
@@ -20,7 +26,7 @@ class GetByIdProfesorUseCase
                 return $this->notFoundResponse(['error' => $message]);
             }
         } catch (\Exception $e) {
-            \Log::error($e);
+            Log::error($e); // BCM: Registra el error en el registro
 
             return $this->errorResponse('Something went wrong. Please contact support for assistance. Error: ' . $e->getMessage());
         }
@@ -32,7 +38,7 @@ class GetByIdProfesorUseCase
 
         foreach ($assignedProjects as $assignment) {
             $formattedProjects[] = [
-                'id' => $assignment->id, // Cambiar por ID de asignación
+                'id' => $assignment->id,
                 'project_id' => $assignment->project_id,
                 'professor_id' => $assignment->professor_id,
                 'created_at' => $assignment->created_at,

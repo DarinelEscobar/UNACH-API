@@ -1,17 +1,19 @@
 <?php
-//UNACH-API\app\Models\Grade.php
+
+//UNACH-API\app\Models\Grades.php
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Grades extends Model
+class Grade extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'project_assignment_id',
         'project_id',
+        'professor_id',
         'grade',
         'comments',
 

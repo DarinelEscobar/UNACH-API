@@ -16,7 +16,7 @@ class GetByunach_idUseCase
     if ($projects->count() > 0) {
         return ['status' => 200, 'data' => ['projects' => $projects]];
     } else {
-        $message = "No se encontraron proyectos con el estado '{$unach_id}'";
+        $message = "No se encontraron proyectos  '{$unach_id}'";
         return ['status' => 404, 'data' => ['error' => $message]];
     }
 

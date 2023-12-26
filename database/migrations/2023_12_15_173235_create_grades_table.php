@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('project_assignment_id');
             $table->unsignedBigInteger('project_id');
+            $table->unsignedBigInteger('professor_id');
+            
             $table->integer('grade')->nullable();
             $table->text('comments')->nullable();
 
@@ -39,6 +41,7 @@ return new class extends Migration
             // Definición de las claves foráneas
             $table->foreign('project_assignment_id')->references('id')->on('project_assignments');
             $table->foreign('project_id')->references('id')->on('projects');
+            $table->foreign('professor_id')->references('id')->on('project_assignments');
         });
     }
 

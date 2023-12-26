@@ -2,7 +2,7 @@
 // app/Http/Controllers/Grades/UseCases/PostGradeUseCase.php
 namespace App\Http\Controllers\Grades\UseCases;
 
-use App\Models\Grades;
+use App\Models\Grade;
 use App\Models\Projects;
 use App\Models\DataProjects;
 use App\Models\ProjectProtocol;
@@ -16,6 +16,8 @@ class PostGradeUseCase
         $validator = Validator::make($data, [
             'project_assignment_id' => 'required|numeric',
             'project_id' => 'numeric',
+            'professor_id' => 'numeric',
+            
             'grade' => 'nullable|numeric',
             'comments' => 'nullable|string',
             'format_criteria' => 'in:Adecuado,Inadecuado',
@@ -39,7 +41,7 @@ class PostGradeUseCase
         }
 
         // Create the Grade instance
-        $grade = Grades::create($data);
+        $grade = Grade::create($data);
 
         if ($grade->project_id) {
             $projects = Projects::where('id', $grade->project_id)->first();
