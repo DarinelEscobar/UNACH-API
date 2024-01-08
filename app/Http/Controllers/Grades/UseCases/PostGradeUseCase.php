@@ -59,6 +59,6 @@ class PostGradeUseCase
 
         return $grade
             ? ['status' => 200, 'message' => 'Calificación creada exitosamente', 'data' => $grade]
-            : ['status' => 500, 'error' => 'Algo salió mal al crear la calificación'];
+                : ['status' => 500, 'error' => 'Algo salió mal al crear la calificación'];
     }
 }
