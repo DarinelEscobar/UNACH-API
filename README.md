@@ -24,60 +24,150 @@ Run the the API with the following command
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# README - API UNACH
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📌 Proyecto: API para el Módulo de Investigación y Posgrado (UNACH)
+Este repositorio contiene la API desarrollada para gestionar el módulo de investigación y posgrado de la Universidad Autónoma de Chiapas (UNACH). La API está construida con **PHP Laravel** y proporciona endpoints RESTful para interactuar con el sistema.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🛠️ Tecnologías utilizadas
+- **Laravel** (Framework PHP para desarrollo backend)
+- **MySQL** (Base de datos relacional para almacenamiento de datos)
+- **Postman** (Para pruebas de endpoints)
+- **Eraser** (Para diagramas de base de datos)
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 📂 Estructura del Proyecto
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```bash
+UNACH-API
+│   .env.example
+│   artisan
+│   composer.json
+│   README.md
+│
+├── app
+│   ├── Http
+│   │   ├── Controllers
+│   │   │   ├── DataProjectsController.php
+│   │   │   ├── GradesController.php
+│   │   │   ├── ProjectAssignmentsController.php
+│   │   │   ├── ProjectProtocolController.php
+│   │   │   ├── ProjectsController.php
+│   │   │   ├── StudentController.php
+│   │   ├── Middleware
+│
+├── routes
+│   ├── api.php
+│   ├── web.php
+│   ├── route
+│   │   ├── DataProject.php
+│   │   ├── Grade.php
+│   │   ├── Project.php
+│   │   ├── ProjectAssignments.php
+│   │   ├── ProjectProtocol.php
+│   │   ├── Student.php
+│
+├── database
+│   ├── migrations (Migraciones de la base de datos)
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## ⚡ Instalación y Configuración
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 1️⃣ Clonar el repositorio
+```bash
+git clone https://github.com/DarinelEscobar/UNACH-API.git
+cd UNACH-API
+```
 
-### Premium Partners
+### 2️⃣ Instalar dependencias
+```bash
+composer install
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### 3️⃣ Configurar el archivo `.env`
+Copiar el archivo de ejemplo y modificarlo con la configuración de la base de datos:
+```bash
+cp .env.example .env
+```
 
-## Contributing
+### 4️⃣ Generar clave de aplicación
+```bash
+php artisan key:generate
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 5️⃣ Ejecutar migraciones y poblar la base de datos
+```bash
+php artisan migrate --seed
+```
 
-## Code of Conduct
+### 6️⃣ Iniciar el servidor
+```bash
+php artisan serve
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## 🚀 Endpoints Principales
+La API cuenta con múltiples endpoints organizados por funcionalidad. La documentación detallada se encuentra en Postman.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+🔗 **Colección en Postman:** [Documentación de Endpoints](https://gold-sunset-893585.postman.co/workspace/UNACH~2711c1c3-aa24-401e-b5b5-4211997daa86/collection/25622754-623d14ea-0f47-41ab-89a4-cdd5ac47a14d?action=share&creator=25622754)  
+⚠ **Importante:** Este enlace puede expirar en cualquier momento. No contactar para solicitarlo si deja de estar disponible.
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 📊 Base de Datos
+La estructura de la base de datos sigue un esquema bien definido con tablas organizadas según entidades del sistema.
+
+🔗 **Diagrama ER:** [Ver diagrama en Eraser](https://app.eraser.io/workspace/nFThhDOTXLZ1pN82iinc?origin=share)  
+⚠ **Importante:** Este enlace puede expirar en cualquier momento. No contactar para solicitarlo si deja de estar disponible.
+
+---
+
+## 🏗️ Comandos Útiles
+
+### 📌 Crear una migración para una tabla
+```bash
+php artisan make:migration create_<nombre>_table
+```
+
+### 📌 Migrar todas las tablas a la base de datos
+```bash
+php artisan migrate
+```
+
+### 📌 Refrescar migraciones
+```bash
+php artisan migrate:refresh
+```
+
+### 📌 Crear un modelo
+```bash
+php artisan make:model <NombreModelo>
+```
+
+### 📌 Crear un controlador
+```bash
+php artisan make:controller NombreCarpeta/<Nombre>Controller
+```
+
+### 📌 Crear un controlador API
+```bash
+php artisan make:controller api/<NombreController>
+```
+
+---
+
+## 📄 Documentación Relacionada
+
+- **[STD - Proyecto Estancia ](https://drive.google.com/file/d/1Alk7_GqG0IzahUECPSxkGu_6Y5rSX9Ev/view?usp=sharing)**: Descripción técnica del desarrollo de la API.
+- **[Reporte Final de Estadía](https://drive.google.com/file/d/1H8BL0oBYRAFaOu1w4U8x8cypHA7sg5uD/view?usp=sharing)**: Informe completo sobre la implementación y mejoras futuras.
+
+⚠ **Importante:** Los enlaces proporcionados pueden expirar en cualquier momento. No me hago responsable de la validez o disponibilidad de estos documentos en el futuro. **No contactar** para solicitar estos archivos en caso de que los enlaces ya no estén activos.
+
+---
+
